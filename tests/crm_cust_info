@@ -1,0 +1,58 @@
+---QUALITY-CHECK
+
+---write a query to check if there  any duplicates are there in primary key---
+
+
+select * from bronze.crm_cust_info;
+
+select cst_id,count(*)
+from silver.crm_cust_info
+group by cst_id
+having count(*) > 1;
+
+--QUALITY CHECK FOR SILVER_LAYER---
+
+
+---check for unwanted spaces in firstname values 
+
+select * from bronze.crm_cust_info;
+
+select cst_firstname from silver.crm_cust_info
+where cst_firstname !=trim(cst_firstname);
+
+---check for unwanted spaces in lastname values 
+
+
+select cst_lastname from silver.crm_cust_info
+where cst_lastname !=trim(cst_lastname);
+
+---check for unwanted spaces in marital status  values 
+
+
+select cst_marital_status from silver.crm_cust_info
+where cst_marital_status !=trim(cst_marital_status);
+
+
+---check for unwanted spaces in cst_gndr   values 
+
+select cst_gndr from silver.crm_cust_info
+where cst_gndr !=trim(cst_gndr);
+
+
+--checking null values in firstname
+
+select cst_firstname from silver.crm_cust_info
+where cst_firstname is null;
+
+--checking null values in lastname
+
+select cst_lastname from silver.crm_cust_info
+where cst_lastname is null;
+
+
+
+----check the value in gender and status col 
+
+select distinct cst_gndr  from silver.crm_cust_info;
+
+select distinct cst_marital_status  from silver.crm_cust_info;
