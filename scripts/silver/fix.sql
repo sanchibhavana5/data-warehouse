@@ -81,6 +81,8 @@ bronze.crm_prd_info;
 
 
 
+
+
 INSERT INTO silver.crm_sales_details (
 			sls_ord_num,
 			sls_prd_key,
@@ -120,6 +122,7 @@ INSERT INTO silver.crm_sales_details (
 				ELSE sls_price  -- Derive price if original value is invalid
 			END AS sls_price
 		FROM bronze.crm_sales_details;
+
 
 
 
