@@ -1,5 +1,4 @@
----QUALITY-CHECK
-
+--QUALITY CHECK FOR SILVER_LAYER---
 ---write a query to check if there  any duplicates are there in primary key---
 
 
@@ -10,7 +9,7 @@ from silver.crm_cust_info
 group by cst_id
 having count(*) > 1;
 
---QUALITY CHECK FOR SILVER_LAYER---
+
 
 
 ---check for unwanted spaces in firstname values 
