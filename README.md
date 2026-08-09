@@ -101,5 +101,5 @@ data-warehouse-project/
 └── requirements.txt                    # Dependencies and requirements for the project
 ```
 ---
-e&logoColor=white)](https://www.youtube.com/@datawithbaraa)
+
 
